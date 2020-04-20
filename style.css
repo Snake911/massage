@@ -1,0 +1,361 @@
+/* variables */
+body {
+    --gold-color: #d1ab3f;
+}
+
+/* general */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: var(--gold-color);
+}
+
+h2 {
+    text-align: center;
+    background-image: url(./img/plashka.png);
+    background-size: 120px;
+    padding: 10px;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+aside {
+    background-image: url(./img/back.png);
+    background-size: 210px;
+}
+
+li {
+    list-style-type: none;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.logo {
+    width: 23vw;
+    height: 85px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 34px;
+    font-family: serif;
+}
+/* header */
+.header_menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url('./img/back.jpg');
+    background-size: 120px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+.header_menu nav {
+    width: 40vw;
+    display: flex;
+    justify-content: space-around;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+    height: 85px;
+}
+
+.header_menu nav a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 15px;
+}
+
+.header_menu nav a:hover {
+    background: rgba(245,245,245,0.1);
+}
+
+.hello {
+    height: 650px;
+    background-size: cover;
+    background-position: center;
+}
+
+.hello_contacts {
+    position: absolute;
+    top: 140px;
+    right: 140px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-weight: 600;
+    border-radius: 15px;
+    font-size: 16px;
+}
+
+.hello_contacts_phone {
+    font-size: 24px;
+}
+/* girls */
+.girls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.girls ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 80vw;
+    overflow: auto;
+    height: auto;
+    max-height: 1500px;
+    transition: all ease 1s;
+}
+
+ul.girls_hidden {
+    max-height: 0px;
+    overflow: hidden;
+}
+
+.girls .button_vision, .girls .button_hidden {
+    display: block;
+    width: 160px;
+    height: fit-content;
+    margin: 20px;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    color: var(--gold-color);
+    background: #14171c;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+    font-size: 14px;
+}
+
+.girls li {
+    position: relative;
+}
+
+.girls li img{
+    height: 360px;
+    width: 225px;
+}
+
+.girl_info {
+    position: absolute;
+    bottom: 5px;
+    height: 42px;
+    width: 100%;
+    overflow-y: hidden;
+    text-align: center;
+    background: rgba(0, 0, 0, .5);
+    color: var(--gold-color);
+    transition: all ease 1s;
+    padding: 15px;
+}
+
+.girl_name {
+    font-weight: 600;
+}
+.girls li img:hover + .girl_info, .girl_info:hover {
+    height: 40%;
+}
+
+/* carousel */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.carousel-item {
+   width: 100vw;
+   height: 100%;
+   justify-content: space-around;
+   align-items: center;
+   position: absolute;
+   display: flex;
+   opacity: 0;
+   left: 100vw;
+   transition: left ease 1s, opacity ease 1s;
+}
+
+.carousel-item.active {
+    left: 0;
+    opacity: 1;
+}
+
+.carousel-item.nextSlide {
+    opacity: 0;
+}
+
+.carousel-item.prevSlide {
+    left: -100vw;
+    opacity: 0;
+}
+
+.carousel-item article {
+    width: 50vw;
+    height: 100%;
+    background-position: center;
+    background-size: cover;    
+    position: relative;
+}
+
+.carousel-item button {
+    border: none;
+    background: rgba(0, 0, 0, .3);
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    outline: none;
+}
+
+.carousel-item button::before, .carousel-item button::after {
+    content: "";
+    width: 25px;
+    height: 4px;
+    border-radius: 10px;
+    display: block;
+    background: #ccc;
+    position: relative; 
+}
+
+.carousel-item button.prev::before {
+    transform: rotate(-45deg);
+    top: -6px;
+    left: 10px;
+}
+
+.carousel-item button.prev::after {
+    transform: rotate(45deg);
+    top: 6px;
+    left: 10px;
+}
+
+.carousel-item button.next::before {
+    transform: rotate(45deg);
+    top: -6px;
+    left: 15px;
+}
+
+.carousel-item button.next::after {
+    transform: rotate(-45deg);
+    top: 6px;
+    left: 15px;
+}
+
+/* prices */
+.prices {
+    height: 470px;
+}
+
+.price_info {
+    position: absolute;
+    bottom: 0px;
+    height: 42px;
+    overflow-y: hidden;
+    text-align: center;
+    background: rgba(0, 0, 0, .5);
+    color: var(--gold-color);
+    transition: all ease 1s;
+    padding: 10px;
+}
+
+.price_info > h3 {
+    margin-bottom: 10px;
+}
+
+.prices article:hover > .price_info, .price_info:hover{
+    height: 30%;
+}
+
+/* promotions */
+
+.promotions {
+    height: 470px;
+}
+
+.promotions article:hover > .price_info, .price_info:hover{
+    height: 30%;
+}
+/* map */
+
+.map {
+    margin-bottom: 0;
+}
+
+
+/* footer */
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 150px;
+    background-image: url('./img/back.jpg');
+    background-size: 120px;
+    padding: 25px 0px;
+}
+
+.footer_contacts {
+    display: flex;
+    width: 30%;
+    justify-content: space-between;
+    font-size: 14px;
+    height: 100%;
+}
+
+footer nav {
+    height: 100%;
+}
+
+footer ul {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+footer img {
+    margin-right: 10px;
+    height: 20px;
+    filter: invert(1);
+}
+
+footer li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #fff;
+}
+
+footer a {
+    color: #fff;
+}
+
