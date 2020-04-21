@@ -57,7 +57,22 @@ li {
     font-size: 34px;
     font-family: serif;
 }
+
 /* header */
+.noIntim {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+}
+
+.noIntim img {
+    margin-right: 10px;
+}
+
 .header_menu {
     display: flex;
     justify-content: space-around;
@@ -65,8 +80,8 @@ li {
     background-image: url('./img/back.jpg');
     background-size: 120px;
     width: 100%;
-    position: fixed;
-    top: 0;
+    position: sticky;
+    top: 0px;
     z-index: 10;
 }
 
@@ -83,6 +98,7 @@ li {
 .header_menu nav a {
     display: flex;
     align-items: center;
+    text-align: center;
     height: 100%;
     padding: 15px;
 }
@@ -114,8 +130,9 @@ li {
     font-size: 16px;
 }
 
-.hello_contacts_phone {
+.hello_contacts_phone a {
     font-size: 24px;
+    color: #fff;
 }
 /* girls */
 .girls {
@@ -129,15 +146,14 @@ li {
     flex-wrap: wrap;
     justify-content: space-between;
     width: 80vw;
-    overflow: auto;
+    overflow: hidden;
     height: auto;
-    max-height: 1500px;
-    transition: all ease 1s;
+    max-height: 360px;
+    transition: all ease 1.5s;
 }
 
-ul.girls_hidden {
-    max-height: 0px;
-    overflow: hidden;
+.girls ul.active {
+    max-height: 13000px;
 }
 
 .girls .button_vision, .girls .button_hidden {
@@ -270,29 +286,37 @@ ul.girls_hidden {
     left: 15px;
 }
 
-/* prices */
-.prices {
+/* programes */
+.programes {
     height: 470px;
 }
 
-.price_info {
+.programes_info {
     position: absolute;
     bottom: 0px;
-    height: 42px;
+    max-height: 42px;
     overflow-y: hidden;
     text-align: center;
     background: rgba(0, 0, 0, .5);
     color: var(--gold-color);
-    transition: all ease 1s;
+    transition: all ease-out 1.5s;
     padding: 10px;
+    height: auto;
 }
 
-.price_info > h3 {
+.programes_info > h3 {
     margin-bottom: 10px;
 }
 
-.prices article:hover > .price_info, .price_info:hover{
-    height: 30%;
+.programes article:hover > .programes_info, .programes_info:hover{
+    max-height: 100%;
+}
+
+.timePrice {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    text-transform: uppercase;
 }
 
 /* promotions */
@@ -301,8 +325,8 @@ ul.girls_hidden {
     height: 470px;
 }
 
-.promotions article:hover > .price_info, .price_info:hover{
-    height: 30%;
+.promotions article:hover > .programes_info, .programes_info:hover{
+    max-height: 100%;
 }
 /* map */
 
@@ -310,6 +334,18 @@ ul.girls_hidden {
     margin-bottom: 0;
 }
 
+/* vacansies */
+
+.vacancies {
+    text-align: center;
+    padding: 10px;
+}
+
+.vacancies p {
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+}
 
 /* footer */
 
@@ -325,7 +361,7 @@ footer {
 
 .footer_contacts {
     display: flex;
-    width: 30%;
+    width: 32%;
     justify-content: space-between;
     font-size: 14px;
     height: 100%;
@@ -359,3 +395,108 @@ footer a {
     color: #fff;
 }
 
+.burgerActive {
+    display: none;
+}
+
+
+@media screen and (max-width: 920px) {
+    /* header */
+    
+    .logo {
+        width: 32vw;
+    }
+
+    .header_menu nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        position: absolute;
+        width: 100%;
+        top: 85px;
+        overflow: hidden;
+        height: auto;
+        max-height: 0px;
+        transition: all linear 1s;
+    }
+
+    .burgerActive:checked + nav {
+        max-height: 1000px;
+    }
+
+    .header_menu nav a {        
+        border-bottom: 1px solid #aaa;
+        width: 100%;
+        text-align: center;
+        display: block;
+        background: #000;
+    }
+
+    .header_menu nav a:active, .header_menu nav a:hover {        
+        background: #555;
+    }
+
+    .burger, .burger::before, .burger::after {
+        content: "";
+        width: 40px;
+        height: 4px;
+        background: var(--gold-color);
+        display: block;
+        position: relative;
+    }
+
+    .burger::before {
+        top: -10px;
+    }
+
+    .burger::after {
+        top: 5px;
+    }
+
+    .footer_contacts {
+        width: 35%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    
+    .logo {
+        width: 41vw;
+        font-size: 26px;
+    }  
+    
+    .logo img {
+        transform: scale(0.8);
+    }
+
+    .girls ul {
+        justify-content: center;
+    }
+
+    .carousel-item button {
+        transform: scale(0.7);
+    }
+
+    .carousel-item article {
+        width: 65vw;
+    }
+
+    .programes_info{
+        font-size: 14px;
+    }
+    
+
+    footer {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 390px) {
+
+    .logo {
+        width: 60vw;
+    }
+
+    
+}

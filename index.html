@@ -9,22 +9,25 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="header_menu">
-            <a href='#' class="logo">
-                <img src="./img/logo.png" width="150">
-                Барон
-            </a>
-            <nav>
-                <a href="#girls">Девушки</a>
-                <a href="#prices">Цены</a>
-                <a href="#promotions">Акции</a>
-                <a href="#map">Как нас найти</a>
-            </nav>
-        </div>
+    <div class="noIntim"><img src="./img/icons/18.png" width="25">Интим-услуги не предоставляются</div>
+    <div class="header_menu">
+        <a href='#' class="logo">
+            <img src="./img/logo.png" width="150">
+            Барон
+        </a>
+        <label for="burgerActive"><span class="burger" id="burger"></span></label><input class="burgerActive" id="burgerActive" type="checkbox">
+        <nav>
+            <a href="#girls">Девушки</a>
+            <a href="#programes">Программы</a>
+            <a href="#promotions">Акции</a>
+            <a href="#map">Как нас найти</a>
+            <a href="#vacancies">Вакансии</a>
+        </nav>
+    </div>
+    <header>        
         <div class="hello" style="background-image: url('./img/hello.jpg');">
             <span class="hello_contacts">
-                <p class="hello_contacts_phone">+79000000000</p>
+                <p class="hello_contacts_phone"><a href="tel:+79000000000">+79000000000</a></p>
                 <p>ул. Красных Зорь 86</p>
             </span>
         </div>
@@ -32,7 +35,7 @@
     <main>
         <h2 id="girls">Девушки</h2> 
         <aside class="girls">          
-            <ul>
+            <ul class="girls_list">
                 <li>
                     <img src="./img/girls/adult-archery-beautiful-beauty-413879.jpg" class="girl_photo" />
                     <div class="girl_info">
@@ -72,10 +75,7 @@
                         <div class="girl_weight">Вес:</div>
                         <div class="girl_bust">Грудь:</div>
                     </div>
-                </li>
-            </ul>
-            <button class="button_vision">Показать всех</button>
-            <ul class="girls_hidden">
+                </li>            
                 <li>
                     <img src="./img/girls/portrait-of-woman-247206.jpg" class="girl_photo" />
                     <div class="girl_info">
@@ -127,67 +127,74 @@
                     </div>
                 </li>
             </ul>
-            <a href="#girls" class="button_hidden hidden">Скрыть</a>
+            <button class="button_vision">Показать всех</button>
         </aside>
-        <h2 id="prices">Цены</h2>
-        <aside class="prices">                      
+        <h2 id="programes">Программы</h2>
+        <aside class="programes">                      
             <ul class="carousel-container">
                 <li class="carousel-item active" id="1">
                     <button class="prev"></button>
-                    <article style="background-image: url('./img/prices/price.jpg');">
-                        <div class="price_info">
-                            <h3>Текст цены 1</h3>
-                            <span>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto natus
-                                nobis magni voluptates voluptas! Molestias unde voluptate modi esse
-                                consequatur cum corporis obcaecati dignissimos nisi sequi fuga eos, nobis 
-                                at!
-                            </span>
+                    <article style="background-image: url('./img/programes/programes.jpg');">
+                        <div class="programes_info">
+                            <h3>"РАНДЕВУ ЭКСПРЕСС"</h3>
+                            <p>
+                                Не все и не всегда могут освободить час своего драгоценного времени, даже ради
+                                получения удовольствия. Мы всё понимаем и ценим ваше время...Вкусная программа
+                                для твоего обеденного перерыва. Ничего лишнего, только эротика и освежающий 
+                                душ. Сексуальное предложение по соблазнительной цене
+                            </p>
+                            <div class="timePrice">
+                                <span>Цена: <b>1200</b></span>
+                                <span>Время: <b>40 мин.</b></span>
+                            </div>
                         </div>
                     </article>
                     <button class="next"></button>
                 </li>
                 <li class="carousel-item nextSlide" id="2">
                     <button class="prev"></button>
-                    <article style="background-image: url('./img/prices/price.jpg');">
-                        <div class="price_info">
-                            <h3>Текст цены 2</h3>
+                    <article style="background-image: url('./img/programes/programes.jpg');">
+                        <div class="programes_info">
+                            <h3>"СЕМЕЙНОЕ РАНДЕВУ"</h3>
                             <span>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto natus
-                                nobis magni voluptates voluptas! Molestias unde voluptate modi esse
-                                consequatur cum corporis obcaecati dignissimos nisi sequi fuga eos, nobis 
-                                at!
+                                Наш салон предлагает вам такие виды эротических массажей, которые обязательно вернут в ваши отношения утраченную страсть и даже усилит её в разы! только представьте, сколько эмоций испытаете вы и ваша леди во время этого небольшого эротического путешествия в неизведанные вами доселе миры настоящего наслаждения. Сценарий программы обговаривается с девушками индивидуально. ( По желанию можем пригласить массажиста)
                             </span>
+                            <div class="timePrice">
+                                <span>Цена: <b>7000-9000</b></span>
+                                <span>Время: <b>2-3 ЧАСА</b></span>
+                            </div>
                         </div>
                     </article>
                     <button class="next"></button>
                 </li>
                 <li class="carousel-item" id="3">
                     <button class="prev"></button>
-                    <article style="background-image: url('./img/prices/price.jpg');">
-                        <div class="price_info">
-                            <h3>Текст цены 3</h3>
+                    <article style="background-image: url('./img/programes/programes.jpg');">
+                        <div class="programes_info">
+                            <h3>"РАНДЕВУ"</h3>
                             <span>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto natus
-                                nobis magni voluptates voluptas! Molestias unde voluptate modi esse
-                                consequatur cum corporis obcaecati dignissimos nisi sequi fuga eos, nobis 
-                                at!
+                                В программу входит принятие душа с обнаженной девушкой до и после массажа, одна эротическая программа, которая включает в себя тайский боди-массаж и массаж лингама, либо имитацию. Затем массаж спины, либо ног на выбор гостя.
                             </span>
+                            <div class="timePrice">
+                                <span>Цена: <b>2000</b></span>
+                                <span>Время: <b>1 час</b></span>
+                            </div>
                         </div>
                     </article>
                     <button class="next"></button>
                 </li>
                 <li class="carousel-item prevSlide" id="4">
                     <button class="prev"></button>
-                    <article style="background-image: url('./img/prices/price.jpg');">
-                        <div class="price_info">
-                            <h3>Текст цены 4</h3>
+                    <article style="background-image: url('./img/programes/programes.jpg');">
+                        <div class="programes_info">
+                            <h3>"РАНДЕВУ ПЛЮС"</h3>
                             <span>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto natus
-                                nobis magni voluptates voluptas! Molestias unde voluptate modi esse
-                                consequatur cum corporis obcaecati dignissimos nisi sequi fuga eos, nobis 
-                                at!
+                                Принятие душа до и после массажа, одна эро-программа и массаж всего тела от макушечки головы до кончиков пальцев ног.
                             </span>
+                            <div class="timePrice">
+                                <span>Цена: <b>3200</b></span>
+                                <span>Время: <b>1,5 часа</b></span>
+                            </div>
                         </div>
                     </article>
                     <button class="next"></button>
@@ -199,8 +206,8 @@
             <ul class="carousel-container">
                 <li class="carousel-item active" id="1">
                     <button class="prev"></button>
-                    <article style="background-image: url('./img/prices/price.jpg');">
-                        <div class="price_info">
+                    <article style="background-image: url('./img/programes/programes.jpg');">
+                        <div class="programes_info">
                             <h3>Текст акции 1</h3>
                             <span>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto natus
@@ -214,8 +221,8 @@
                 </li>
                 <li class="carousel-item nextSlide" id="2">
                     <button class="prev"></button>
-                    <article style="background-image: url('./img/prices/price.jpg');">
-                        <div class="price_info">
+                    <article style="background-image: url('./img/programes/programes.jpg');">
+                        <div class="programes_info">
                             <h3>Текст акции 2</h3>
                             <span>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto natus
@@ -229,8 +236,8 @@
                 </li>
                 <li class="carousel-item" id="3">
                     <button class="prev"></button>
-                    <article style="background-image: url('./img/prices/price.jpg');">
-                        <div class="price_info">
+                    <article style="background-image: url('./img/programes/programes.jpg');">
+                        <div class="programes_info">
                             <h3>Текст акции 3</h3>
                             <span>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto natus
@@ -244,8 +251,8 @@
                 </li>
                 <li class="carousel-item prevSlide" id="4">
                     <button class="prev"></button>
-                    <article style="background-image: url('./img/prices/price.jpg');">
-                        <div class="price_info">
+                    <article style="background-image: url('./img/programes/programes.jpg');">
+                        <div class="programes_info">
                             <h3>Текст акции 4</h3>
                             <span>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto natus
@@ -261,10 +268,39 @@
         </aside>
         <h2 id="map">Как нас найти</h2>
         <aside class="map">
-            
-            <div class="contacts"></div>
             <div class="map">
                 <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Af1ae50a750a7efa8074ca43715f498bdde4374488b6785179544d0ff17a30617&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=false"></script>
+            </div>
+        </aside>
+        <h2 id="vacancies">Вакансии</h2>
+        <aside class="vacancies">
+            <p>
+                Приглашаем привлекательных девушек старше 18 лет. Работа исключительно в салоне, строго без интима и без выездов.
+                Удобный график, постоянный высокий заработок. Опыт работы необязателен!
+            </p>
+            <a href="#vacancy_show" id="vacancy_show">Подробнее</a>
+            <div class="vacancy_descr hidden">
+                <h4>Мастер эротического массажа</h4>
+                <p>Приглашаем привлекательных девушек старше 18 лет. Работа исключительно в салоне, строго без интима и без 
+                    выездов. Удобный график, постоянный высокий заработок. Опыт работы необязателен! Позвоните нам по телефону,
+                     чтобы договориться о собеседовании. 
+                    <br><b>Плюсы работы в "Барон"</b>: 
+                    <br> – стабильная высокая зарплата;
+                    <br> – расчёт сразу после смены;
+                    <br> – никакого интима! 
+                    <br> – удобный лично Вам график работы;
+                    <br> – помощь с проживанием для девушек из других городов;
+                    <br> – обучение массажу, если у вас совсем нет опыта;
+                    <br> – бонусы с допов полностью ваши;
+                    <br> – безопасность и полная конфиденциальность;
+                    <br> – состоятельные и приятные гости. 
+                    <br><b>Наши требования</b>:
+                    <br> – возраст от 18 до 25; 
+                    <br>– приятная внешность;
+                    <br> – ответственное отношение к работе, пунктуальность и трудоспособность;
+                    <br> – общительность, раскрепощённость, внимательное отношение к клиентам;
+                    <br> – любовь к чистоте и гигиене.
+                </p>
             </div>
         </aside>
     </main>
@@ -272,21 +308,22 @@
         <nav>
             <ul>
                 <li><a href="#girls">Девушки</a></li>
-                <li><a href="#prices">Цены</a></li>
+                <li><a href="#programes">Программы</a></li>
                 <li><a href="#promotions">Акции</a></li>
                 <li><a href="#map">Как нас найти</a></li>
+                <li><a href="#vacancies">Вакансии</a></li>            
             </ul>
         </nav>
         <div class="footer_contacts">
             <ul>
-                <li><img src="./img/icons/phone.svg">+79000000000</li>
-                <li><img src="./img/icons/phone.svg">+79000000001</li>
-                <li><img src="./img/icons/email.svg">example@example.ru</li>
+                <li><img src="./img/icons/phone.svg"><a href="tel:+79000000000">+79000000000</a></li>
+                <li><img src="./img/icons/phone.svg"><a href="tel:+79000000001">+79000000001</a></li>
+                <li><img src="./img/icons/email.svg"><a href="mailto:example@example.ru">example@example.ru</a></li>
             </ul>
             <ul>
-                <li><img src="./img/icons/facebook.svg">Facebook</li>
-                <li><img src="./img/icons/whatsapp.svg">Whatsapp</li>
-                <li><img src="./img/icons/instagram.svg">Instagram</li>
+                <li><img src="./img/icons/facebook.svg"><a href="#">Facebook</a></li>
+                <li><img src="./img/icons/whatsapp.svg"><a href="#">Whatsapp</a></li>
+                <li><img src="./img/icons/instagram.svg"><a href="#">Instagram</a></li>
             </ul>
         </div>
     </footer>

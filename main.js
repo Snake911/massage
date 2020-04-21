@@ -1,3 +1,5 @@
+const header_menu = document.querySelector('.header_menu');
+
 const slider = (container) => {
     const prevButtons = container.querySelectorAll('.prev');
     const nextButtons = container.querySelectorAll('.next');
@@ -37,46 +39,60 @@ const slider = (container) => {
     });
 };
 
-const prices = document.querySelector('.prices');
+const programes = document.querySelector('.programes');
 const promotions = document.querySelector('.promotions');
 
-slider(prices);
+slider(programes);
 slider(promotions);
 
 const girlsShow = document.querySelector('.button_vision');
-const girlsHide = document.querySelector('.button_hidden');
-const girlsAll = document.querySelector('.girls_hidden');
+const girlsList = document.querySelector('.girls_list');
+
 girlsShow.addEventListener('click', (e) => {
-    e.target.classList.add('hidden');
-    girlsAll.classList.remove('girls_hidden');
-    girlsHide.classList.remove('hidden');
+    if (e.target.classList.contains('active')) {
+        girlsList.classList.remove('active');
+        e.target.classList.remove('active');
+        e.target.textContent = "Показать всех";        
+        window.scrollTo({top: getCoords(girlsList).top - header_menu.offsetHeight});
+    } else {
+        e.target.classList.add('active');
+        girlsList.classList.add('active');
+        e.target.textContent = "Скрыть";
+    }
 });
 
-girlsHide.addEventListener('click', (e) => {
-    e.target.classList.add('hidden');
-    girlsAll.classList.add('girls_hidden');
-    girlsShow.classList.remove('hidden');
-    window.location.hash="girls";
-});
 
 const anchors = document.querySelectorAll('a[href^="#"]');
-const header_menu = document.querySelector('.header_menu');
-console.log(header_menu.offsetHeight);
+const burgerActive = document.getElementById('burgerActive');
+const burger = document.getElementById('burger');
+
+
 [].forEach.call(anchors, (anchor) => {
     if (anchor.hash) {
         anchor.addEventListener('click', (e) => {
+            console.log(burgerActive.checked)
+            if (burgerActive.checked) {
+                burgerActive.checked = false;
+            }           
             const targ = document.querySelector(`${anchor.hash}`);
-            window.scrollTo({top: getCoords(targ).top - header_menu.offsetHeight});
+            window.scrollTo({top: getCoords(targ).top - header_menu.offsetHeight});            
             e.preventDefault();
         });        
     }
 });
 
+const vacancy_show = document.getElementById('vacancy_show');
+const vacancy_descr = document.querySelector('.vacancy_descr');
+
+vacancy_show.addEventListener('click', (e) => {
+    e.target.classList.add('hidden');
+    vacancy_descr.classList.remove('hidden');
+});
+
 const getCoords = (elem) => {
-    let box = elem.getBoundingClientRect();
-  
+    let box = elem.getBoundingClientRect();  
     return {
       top: box.top + pageYOffset,
       left: box.left + pageXOffset
     };
-  }
+};
