@@ -44,7 +44,7 @@ li {
 }
 
 .logo {
-    width: 23vw;
+    width: 20vw;
     height: 85px;
     background-size: contain;
     background-repeat: no-repeat;
@@ -116,7 +116,7 @@ li {
 .hello_contacts {
     position: absolute;
     top: 140px;
-    right: 140px;
+    right: 10%;
     color: #fff;
     background: rgba(0, 0, 0, 0.5);
     padding: 20px;
@@ -183,7 +183,7 @@ li {
 
 .girl_info {
     position: absolute;
-    bottom: 5px;
+    bottom: 4px;
     height: 42px;
     width: 100%;
     overflow-y: hidden;
@@ -287,11 +287,69 @@ li {
 }
 
 /* programes */
-.programes {
+
+.programes table {
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+    border-bottom: 1px solid
+}
+
+.programes table thead {    
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.programes table tbody .arrow {
+    border: 5px solid transparent;
+    border-left: 5px solid #666;
+    height: 5px;
+    display: inline-block;
+    position: relative;
+    right: 5px;
+    transition: all ease .5s;
+}
+
+.programes table tr.active .arrow {
+    transform: rotate(90deg);
+}
+
+.programes table tbody tr {
+    border-top: 1px solid;
+    cursor: pointer;
+}
+
+.programes table tbody tr:hover h4 {
+    text-decoration: underline;
+    text-decoration-style: dashed;
+}
+
+.programes table td {
+    padding: 5px 10px;
+}
+
+.programes table h4 {
+    padding: 5px;
+}
+
+.programes table p {
+    width: 40vw;
+    overflow-y: hidden;
+    max-height: 0;
+    height: auto;
+    transition: all ease 1s; 
+}
+
+.programes table tr.active p {
+    max-height: 1500px;
+}
+
+/* promotions */
+
+.promotions {
     height: 470px;
 }
 
-.programes_info {
+.promotions_info {
     position: absolute;
     bottom: 0px;
     max-height: 42px;
@@ -304,28 +362,11 @@ li {
     height: auto;
 }
 
-.programes_info > h3 {
+.promotions_info > h3 {
     margin-bottom: 10px;
 }
 
-.programes article:hover > .programes_info, .programes_info:hover{
-    max-height: 100%;
-}
-
-.timePrice {
-    display: flex;
-    justify-content: space-around;
-    padding: 10px;
-    text-transform: uppercase;
-}
-
-/* promotions */
-
-.promotions {
-    height: 470px;
-}
-
-.promotions article:hover > .programes_info, .programes_info:hover{
+.promotions article:hover > .promotions_info, .promotions_info:hover{
     max-height: 100%;
 }
 /* map */
@@ -470,6 +511,10 @@ footer a {
         transform: scale(0.8);
     }
 
+    .hello {
+        height: 500px;
+    }
+
     .girls ul {
         justify-content: center;
     }
@@ -498,5 +543,12 @@ footer a {
         width: 60vw;
     }
 
+    .hello {
+        height: 370px;
+    }
+
+    .programes table p {
+        font-size: 12px;
+    }
     
 }

@@ -1,5 +1,14 @@
 const header_menu = document.querySelector('.header_menu');
-
+const girlsShow = document.querySelector('.button_vision');
+const girlsList = document.querySelector('.girls_list');
+const anchors = document.querySelectorAll('a[href^="#"]');
+const burgerActive = document.getElementById('burgerActive');
+const burger = document.getElementById('burger');
+const promotions = document.querySelector('.promotions');
+const programes = document.querySelectorAll('.program');
+const vacancy_show = document.getElementById('vacancy_show');
+const vacancy_descr = document.querySelector('.vacancy_descr');
+//Переключение слайдера
 const slider = (container) => {
     const prevButtons = container.querySelectorAll('.prev');
     const nextButtons = container.querySelectorAll('.next');
@@ -38,16 +47,7 @@ const slider = (container) => {
         });
     });
 };
-
-const programes = document.querySelector('.programes');
-const promotions = document.querySelector('.promotions');
-
-slider(programes);
-slider(promotions);
-
-const girlsShow = document.querySelector('.button_vision');
-const girlsList = document.querySelector('.girls_list');
-
+//Показ всех девушек
 girlsShow.addEventListener('click', (e) => {
     if (e.target.classList.contains('active')) {
         girlsList.classList.remove('active');
@@ -60,13 +60,7 @@ girlsShow.addEventListener('click', (e) => {
         e.target.textContent = "Скрыть";
     }
 });
-
-
-const anchors = document.querySelectorAll('a[href^="#"]');
-const burgerActive = document.getElementById('burgerActive');
-const burger = document.getElementById('burger');
-
-
+// Скролл к разделу
 [].forEach.call(anchors, (anchor) => {
     if (anchor.hash) {
         anchor.addEventListener('click', (e) => {
@@ -80,15 +74,22 @@ const burger = document.getElementById('burger');
         });        
     }
 });
-
-const vacancy_show = document.getElementById('vacancy_show');
-const vacancy_descr = document.querySelector('.vacancy_descr');
-
+//Отображение вакансии
 vacancy_show.addEventListener('click', (e) => {
     e.target.classList.add('hidden');
     vacancy_descr.classList.remove('hidden');
 });
-
+//Показ описания программы
+[].forEach.call(programes, (program) => {
+    program.addEventListener('click', (e) => {
+        if(program.classList.contains('active')) {
+            program.classList.remove('active');
+        } else {
+            program.classList.add('active');
+        }
+    });
+})
+//Определение координат элемента относительно документа
 const getCoords = (elem) => {
     let box = elem.getBoundingClientRect();  
     return {
@@ -96,3 +97,5 @@ const getCoords = (elem) => {
       left: box.left + pageXOffset
     };
 };
+//Включение слайдера
+slider(promotions);
